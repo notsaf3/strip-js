@@ -31,7 +31,7 @@ var stripJs = function(htmlContent, opts) {
      htmlContent = doctypes[0] + htmlContent
    }
 
-   var $ = cheerio.load(htmlContent);
+   var $ = cheerio.load(htmlContent, { decodeEntities: false });
 
    // Remove all script tags:
    $('script').remove();
